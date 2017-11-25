@@ -20,7 +20,7 @@
             <div class="header-logo">
               <!--img src="img/logo-2.png" alt="Logo"-->
               <div class="logo">
-                <h2>Alvi Mahadi</h2>
+                <h2><%= @cv[:user][:name] %></h2>
               </div>
             </div>
             <!-- Logo -->
@@ -81,7 +81,7 @@
               <div class="header-logo">
                 <!--img src="img/logo-2.png" alt="Logo"-->
                 <div class="logo">
-                  <h2>Alvi Mahadi</h2>
+                  <h2><%= @cv[:user][:name] %></h2>
                 </div>
               </div>
               <!-- Logo -->
@@ -118,148 +118,15 @@
     <div class="col-lg-9 col-md-12 content">
 
       <!-- Intro -->
-      <section id="home" class="section intro">
-        <div class="row">
-          <div class="col-md-12">
-            <!--<img class="img-circle" src="img/avater/2.jpg" alt=""/>-->
-            <%= image_tag('avatar.jpg', class: 'img-circle') %>
-            <h2>Alvi Mahadi</h2>
-            <hr>
-            <h3>
-              I have Graduated from the Institute of Information Technology, Jahangirnagar University, Dhaka,
-              Bangladesh and currently searching to secure a graduate position in a reputed institution to extend my career in the research field.
-            </h3>
-            <hr>
-          </div>
-        </div>
-      </section>
+        <%= render partial: 'intro' %>
       <!-- /Intro end -->
 
       <!-- Research Interests Section Start -->
-      <section id="research_interests" class="section">
-        <div class="row">
-          <h3 class="mtcon-title">Research Interests</h3>
-          <div class="short-dec">
-          </div>
-        </div>
-        <div class="mtcon">
-          <div class="section-container">
-            <ul class="research_interests">
-              <li>Natural Language Processing</li>
-              <li>Artificial Intelligence</li>
-              <li>Machine Learning</li>
-              <li>Computational Linguistics</li>
-              <li>Cognitive Science</li>
-              <li>Data Science</li>
-            </ul>
-          </div><!-- /section-container -->
-        </div>
-      </section>
+        <%= render partial: 'research_interest' %>
       <!-- Research Interest Section End -->
 
       <!-- Academic Background Start -->
-      <section id="academic_background" class="section">
-        <div class="row">
-          <h3 class="mtcon-title">Academic Background</h3>
-          <div class="short-dec">
-          </div>
-        </div>
-        <div class="mtcon">
-          <div class="section-container">
-            <div class="row">
-              <div class="timeline">
-                <!-- first item of timeline -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">2011-2015</div><!-- date -->
-                  <!-- timeline item trigger -->
-                  <div class="timeline-item-trigger">
-                    <span class="fa fa-minus" data-toggle="collapse" data-target="#edu1"><i></i></span>
-                  </div>
-                  <!-- /end of timeline item trigger -->
-                  <div class="timeline-arrow"><i></i></div>
-                  <!-- timeline main content -->
-                  <div class="timeline-item-content">
-                    <h3 class="timeline-item-title" data-toggle="collapse" data-target="#edu1">B.Sc. in Information Technology (I.T.)</h3>
-                    <div class="collapse in" id="edu1">
-                      <table class=" table table-responsive">
-                        <tr>
-                          <td><b>Institution</b></td>
-                          <td>Institute of Information Technology, Jahangirnagar University, Dhaka.</td>
-                        </tr>
-                        <tr>
-                          <td><b>CGPA</b></td>
-                          <td>3.73 (Scale - 4.00) </td>
-                        </tr>
-                      </table>
-                      <a href="https://drive.google.com/open?id=0By7f-4j11gCAT1FCX0FPVFF3WXM" target="_blank" type="button" class="btn btn-info" data-placement="top" data-toggle="tooltip" title="Download Transcript" style="color: white; font-family: inherit; font-size: initial; background-color: #3BC2C8; border-color: #3BC2C8;">
-                        <i class="fa fa-arrow-circle-o-down"></i>&nbsp;Transcript
-                      </a>
-                    </div>
-                  </div>
-                  <!-- /end of timeline main content -->
-                </div>
-                <!-- /end of first item of timeline -->
-
-                <!-- Timeline item -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">2010</div><!-- date -->
-                  <div class="timeline-item-trigger">
-                    <span class="fa fa-plus" data-toggle="collapse" data-target="#edu2"><i></i></span>
-                  </div>
-                  <div class="timeline-arrow"><i></i></div>
-                  <!-- Timeline main content -->
-                  <div class="timeline-item-content">
-                    <h3 class="timeline-item-title" data-toggle="collapse" data-target="#edu2">Higher Secondary School Certificate (H.S.C.)</h3>
-                    <div class="collapse" id="edu2">
-                      <table class=" table table-responsive">
-                        <tr>
-                          <td><b>Institution</b></td>
-                          <td>Notre Dame College, Dhaka.</td>
-                        </tr>
-                        <tr>
-                          <td><b>CGPA</b></td>
-                          <td>4.91 (Scale - 5.00) </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                  <!-- /end of timeline content -->
-                </div>
-                <!-- /end of timeline item -->
-
-                <!-- Timeline item -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">2008</div><!-- date -->
-                  <div class="timeline-item-trigger">
-                    <span class="fa fa-plus" data-toggle="collapse" data-target="#edu3"><i></i></span>
-                  </div>
-                  <div class="timeline-arrow"><i></i></div>
-                  <!-- Timeline main content -->
-                  <div class="timeline-item-content">
-                    <h3 class="timeline-item-title" data-toggle="collapse" data-target="#edu3">Secondary School Certificate (S.S.C.)</h3>
-                    <div class="collapse" id="edu3">
-                      <table class=" table table-responsive">
-                        <tr>
-                          <td><b>Institution</b></td>
-                          <td>Dhanmondi Gvt. Boy’s High School, Dhaka.</td>
-                        </tr>
-                        <tr>
-                          <td><b>CGPA</b></td>
-                          <td>5.00 (Scale - 5.00) </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                  <!-- /end of timeline content -->
-                </div>
-                <!-- /end of timeline item -->
-              </div>
-              <!-- /Education Timeline end -->
-            </div>
-
-          </div><!-- /section-container -->
-        </div>
-      </section>
+        <%= render partial: 'academic_background' %>
       <!-- Academic Background end -->
       <!-- Research Experiences Start -->
       <section id="research_experiences" class="section">

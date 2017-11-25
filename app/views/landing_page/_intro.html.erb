@@ -1,0 +1,14 @@
+<section id="home" class="section intro">
+  <div class="row">
+    <div class="col-md-12">
+      <!--<img class="img-circle" src="img/avater/2.jpg" alt=""/>-->
+      <%= image_tag('avatar.jpg', class: 'img-circle') %>
+      <h2><%= @cv[:user][:name] %></h2>
+      <hr>
+      <h3>
+        <%= @cv[:user][:biography] %>
+      </h3>
+      <hr>
+    </div>
+  </div>
+</section>
