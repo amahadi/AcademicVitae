@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-if Rails.env.development?
-  AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-else
-  AdminUser.find_or_create_by!(email: 'admin@example.com', encrypted_password: 'password')
+admin_user = AdminUser.find_by(email: 'admin@example.com')
+unless admin_user.present?
+  admin_user = AdminUser.new(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  puts "Admin user with email #{admin_user.email} created successfully" if admin_user.save!
 end
