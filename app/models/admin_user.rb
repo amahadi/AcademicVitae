@@ -1,5 +1,8 @@
 class AdminUser < ApplicationRecord
   has_many :research_interests
+  has_many :academic_backgrounds
+  has_many :research_experiences
+  has_many :paper_and_publications
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
