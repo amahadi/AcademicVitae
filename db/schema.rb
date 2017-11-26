@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125183335) do
+ActiveRecord::Schema.define(version: 20171126073820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "academic_backgrounds", force: :cascade do |t|
+    t.bigint "admin_user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "title"
+    t.string "institution"
+    t.float "cgpa"
+    t.float "scale"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "transcript_file_name"
+    t.string "transcript_content_type"
+    t.integer "transcript_file_size"
+    t.datetime "transcript_updated_at"
+    t.string "certificate_file_name"
+    t.string "certificate_content_type"
+    t.integer "certificate_file_size"
+    t.datetime "certificate_updated_at"
+    t.index ["admin_user_id"], name: "index_academic_backgrounds_on_admin_user_id"
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"

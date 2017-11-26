@@ -6,9 +6,8 @@ class LandingPageController < ApplicationController
             name: user.name,
             biography: user.biography
         },
-        research_interest: {
-            subjects: ResearchInterest.all
-        }
+        research_interests: ResearchInterest.all,
+        academic_backgrounds: AcademicBackground.all
     }
   end
 end
