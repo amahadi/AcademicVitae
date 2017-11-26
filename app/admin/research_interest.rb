@@ -17,6 +17,7 @@ ActiveAdmin.register ResearchInterest do
     selectable_column
     id_column
     column :interested_field
+    actions
   end
 
   form do |f|

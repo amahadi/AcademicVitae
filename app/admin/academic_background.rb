@@ -13,6 +13,7 @@ ActiveAdmin.register AcademicBackground do
     column :scale
     column :transcript
     column :certificate
+    actions
   end
 
   form do |f|
