@@ -8,26 +8,18 @@
     <div class="section-container">
       <table class="table table-responsive">
         <tbody>
-        <tr>
-          <td><b>Undergraduate Thesis</b></td>
-          <td>
-            "An Efficient Approach of Training Artificial Neural Network to Recognize
-            Bengali Hand Sign" — Institute of Information Technology, Jahangirnagar
-            University.<br>
-            &nbsp; &nbsp;- Supervised by: Dr. Mohammad Abu Yousuf, Assistant Professor, Institute
-            of Information Technology, Jahangirnagar University.
-          </td>
-        </tr>
-        <tr>
-          <td><b>NST Fellowship Thesis</b></td>
-          <td>
-            "A Novel Approach of Feature Extraction and Recognition Printed Bengali
-            Characters" — Ministry of Science and Technology, People’s Republic of
-            Bangladesh.<br>
-            &nbsp; &nbsp;- Supervised by: Dr. Mohammad Abu Yousuf, Assistant Professor, Institute
-            of Information Technology, Jahangirnagar University.
-          </td>
-        </tr>
+          <% @cv[:research_experiences].each do |research_experience| %>
+              <tr>
+                <td><b><%= research_experience.thesis_done_for %> Thesis</b></td>
+                <td>
+                  "<%= research_experience.thesis_title %>" — <%= research_experience.institute %><br>
+                  <% if research_experience.supervisor_name.present?  %>
+                  <% end  %>
+                  &nbsp; &nbsp;- Supervised by: <%= research_experience.supervisor_name %>, <%= research_experience.supervisor_designation %>,
+                  <%= research_experience.supervisor_institute %>
+                </td>
+              </tr>
+          <% end %>
         </tbody>
       </table>
 
