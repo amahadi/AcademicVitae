@@ -7,7 +7,8 @@ class LandingPageController < ApplicationController
             biography: user.biography
         },
         research_interests: ResearchInterest.all,
-        academic_backgrounds: AcademicBackground.all
+        academic_backgrounds: AcademicBackground.all,
+        research_experiences: ResearchExperience.all
     }
   end
 end

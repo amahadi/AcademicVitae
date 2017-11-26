@@ -1,0 +1,2 @@
+class ResearchExperience < ApplicationRecord
+end
