@@ -8,20 +8,14 @@
     <div class="section-container">
       <table class="table table-responsive">
         <tbody>
-        <tr>
-          <td><b>University Scholarship</b></td>
-          <td>
-            Received university merit scholarship in every year of Bachelor degree.
-          </td>
-        </tr>
-        <tr>
-          <td><b>NST Fellowship</b></td>
-          <td>
-            Received National Science and Technology (NST) Fellowship under the
-            Ministry of Science and Technology, The People's Republic of Bangladesh
-            in 2016-'17 fiscal year.
-          </td>
-        </tr>
+        <% @cv[:awards_and_fellowships].each do |award_and_fellowship| %>
+          <tr>
+            <td><b><%= award_and_fellowship.title %></b></td>
+            <td>
+              <%= award_and_fellowship.description %>
+            </td>
+          </tr>
+        <% end %>
         </tbody>
       </table>
     </div><!-- /section-container -->
