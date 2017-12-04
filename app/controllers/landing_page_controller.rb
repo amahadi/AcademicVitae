@@ -8,7 +8,8 @@ class LandingPageController < ApplicationController
         },
         research_interests: ResearchInterest.all,
         academic_backgrounds: AcademicBackground.all,
-        research_experiences: ResearchExperience.all
+        research_experiences: ResearchExperience.all,
+        papers_and_publications: PaperAndPublication.all.order(publication_number: :desc)
     }
   end
 end
