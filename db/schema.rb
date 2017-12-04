@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126150153) do
+ActiveRecord::Schema.define(version: 20171126153738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,22 @@ ActiveRecord::Schema.define(version: 20171126150153) do
     t.string "name"
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "paper_and_publications", force: :cascade do |t|
+    t.bigint "admin_user_id"
+    t.integer "publication_number"
+    t.string "author_names"
+    t.string "publication_title"
+    t.string "conference_title"
+    t.string "conference_venue"
+    t.date "conference_start_date"
+    t.date "conference_end_date"
+    t.string "link"
+    t.string "link_alias"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_user_id"], name: "index_paper_and_publications_on_admin_user_id"
   end
 
   create_table "research_experiences", force: :cascade do |t|
