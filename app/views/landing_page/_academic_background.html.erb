@@ -1,0 +1,55 @@
+<section id="academic_background" class="section">
+  <div class="row">
+    <h3 class="mtcon-title">Academic Background</h3>
+    <div class="short-dec">
+    </div>
+  </div>
+  <div class="mtcon">
+    <div class="section-container">
+      <div class="row">
+        <div class="timeline">
+          <!-- first item of timeline -->
+          <% @cv[:academic_backgrounds].each do |academic_background| %>
+            <div class="timeline-item">
+              <div class="timeline-item-date"><%= build_academic_year(academic_background) %></div><!-- date -->
+              <!-- timeline item trigger -->
+              <div class="timeline-item-trigger">
+                <span class="<%= @cv[:academic_backgrounds][0] == academic_background ? 'fa fa-minus' : 'fa fa-plus collapsed'%>" data-toggle="collapse" data-target="<%= "#edu#{academic_background.id}" %>" aria-expanded="<%= @cv[:academic_backgrounds][0] == academic_background %>"><i></i></span>
+              </div>
+              <!-- /end of timeline item trigger -->
+              <div class="timeline-arrow"><i></i></div>
+              <!-- timeline main content -->
+              <div class="timeline-item-content">
+                <h3 class="<%= @cv[:academic_backgrounds][0] == academic_background ? 'timeline-item-title' : 'timeline-item-title collapsed' %>" data-toggle="collapse" data-target="<%= "#edu#{academic_background.id}" %>" aria-expanded="<%= @cv[:academic_backgrounds][0] == academic_background %>"><%= academic_background.title %></h3>
+                <div class="<%= @cv[:academic_backgrounds][0] == academic_background ? 'collapse in' : 'collapse' %>" id="<%= "edu#{academic_background.id}" %>" aria-expanded="<%= @cv[:academic_backgrounds][0] == academic_background %>">
+                  <table class="table table-responsive">
+                    <tr>
+                      <td><b>Institution</b></td>
+                      <td><%= academic_background.institution %></td>
+                    </tr>
+                    <tr>
+                      <td><b>CGPA</b></td>
+                      <td><%= "#{academic_background.cgpa} (Scale - #{academic_background.scale})" %> </td>
+                    </tr>
+                  </table>
+                  <% if academic_background.transcript.present? %>
+                      <a href=<%= academic_background.transcript %> target="_blank" type="button" class="btn btn-info" data-placement="top" data-toggle="tooltip" title="Download Transcript" style="color: white; font-family: inherit; font-size: initial; background-color: #3BC2C8; border-color: #3BC2C8;">
+                        <i class="fa fa-arrow-circle-o-down"></i>&nbsp;Transcript
+                      </a>
+                  <% end %>
+                  <% if academic_background.certificate.present? %>
+                      <a href=<%= academic_background.certificate %> target="_blank" type="button" class="btn btn-info" data-placement="top" data-toggle="tooltip" title="Download Certificate" style="color: white; font-family: inherit; font-size: initial; background-color: #3BC2C8; border-color: #3BC2C8;">
+                        <i class="fa fa-arrow-circle-o-down"></i>&nbsp;Certificate
+                      </a>
+                  <% end %>
+                </div>
+              </div>
+              <!-- /end of timeline main content -->
+            </div>
+          <% end %>
+        </div>
+        <!-- /Education Timeline end -->
+      </div>
+    </div><!-- /section-container -->
+  </div>
+</section>

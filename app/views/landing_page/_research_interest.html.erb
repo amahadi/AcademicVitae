@@ -1,0 +1,16 @@
+<section id="research_interests" class="section">
+  <div class="row">
+    <h3 class="mtcon-title">Research Interests</h3>
+    <div class="short-dec">
+    </div>
+  </div>
+  <div class="mtcon">
+    <div class="section-container">
+      <ul class="research_interests">
+        <% @cv[:research_interests].each do |research_interest| %>
+            <li><%= research_interest.interested_field %></li>
+        <% end %>
+      </ul>
+    </div><!-- /section-container -->
+  </div>
+</section>

@@ -1,3 +1,15 @@
 class LandingPageController < ApplicationController
-  def index; end
+  def index
+    user = AdminUser.first
+    @cv = {
+        user: {
+            name: user.name,
+            biography: user.biography
+        },
+        research_interests: ResearchInterest.all,
+        academic_backgrounds: AcademicBackground.all,
+        research_experiences: ResearchExperience.all,
+        papers_and_publications: PaperAndPublication.all.order(publication_number: :desc)
+    }
+  end
 end

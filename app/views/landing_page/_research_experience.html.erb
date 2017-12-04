@@ -1,0 +1,28 @@
+<section id="research_experiences" class="section">
+  <div class="row">
+    <h3 class="mtcon-title">Research Experiences</h3>
+    <div class="short-dec">
+    </div>
+  </div>
+  <div class="mtcon">
+    <div class="section-container">
+      <table class="table table-responsive">
+        <tbody>
+          <% @cv[:research_experiences].each do |research_experience| %>
+              <tr>
+                <td><b><%= research_experience.thesis_done_for %> Thesis</b></td>
+                <td>
+                  "<%= research_experience.thesis_title %>" — <%= research_experience.institute %><br>
+                  <% if research_experience.supervisor_name.present?  %>
+                  <% end  %>
+                  &nbsp; &nbsp;- Supervised by: <%= research_experience.supervisor_name %>, <%= research_experience.supervisor_designation %>,
+                  <%= research_experience.supervisor_institute %>
+                </td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div><!-- /section-container -->
+  </div>
+</section>
